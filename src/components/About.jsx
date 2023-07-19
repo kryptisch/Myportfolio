@@ -48,7 +48,7 @@ const About = () => {
         closely collaborating with clients to develop efficient, scalable, and
         intuitive solutions that address real-world challenges.
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-20">
+      <div className="mt-20 flex flex-wrap gap-20 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

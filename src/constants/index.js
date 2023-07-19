@@ -24,6 +24,10 @@ import {
   payroll,
   tripguide,
   threejs,
+
+  gitIcon,
+  mailIcon,
+  linkedinIcon
   
 } from "../assets";
 
@@ -243,27 +247,27 @@ const projects = [
     image: payroll,
     source_code_link: "https://github.com/",
   },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
+  
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const social=[
+  {
+    name:"Github",
+    Icon:gitIcon,
+    url:"https://github.com/kryptisch/"
+  },
+  {
+    name:"Gmail",
+    Icon:mailIcon,
+    url:"mailto:rohithdigajerla4@gmail.com"
+
+  },
+  {
+    name:"Linkedin",
+    Icon:linkedinIcon,
+    url:"https://www.linkedin.com/in/rohith-digajerla-6aa9411a0/"
+
+  }
+]
+
+export { services, technologies, experiences, testimonials, projects,social };

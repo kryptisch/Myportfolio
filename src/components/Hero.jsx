@@ -1,7 +1,30 @@
-import { motion } from "framer-motion";
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
+import { social } from "../constants";
+import { motion, transform } from "framer-motion";
+import { slideIn } from "../utils/motion";
+import { useEffect, useState } from "react";
+
 const Hero = () => {
+  const [showDiv, setShowDiv] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = window.pageYOffset;
+      const navbarHeight = 680;
+
+      if (scrollHeight > navbarHeight) {
+        setShowDiv(true);
+      } else {
+        setShowDiv(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <section className="relative w-full h-screen mx-auto ">
       <div
@@ -21,7 +44,31 @@ const Hero = () => {
         </div>
       </div>
       <ComputersCanvas />
-      <div className="w-[1px] h-[100px] bg-secondary fixed ml-10 bottom-0 bg-[#00cea8]" />
+      <div>
+        {showDiv && (
+          <motion.div
+            variants={slideIn("left", "tween", 0.2, 1)}
+            className=" fixed flex flex-col left-10 bottom-[-10px] lg:flex hidden items-center z-999"
+          >
+            <div className="flex flex-col justify-center  ">
+              {social.map((item, index) => (
+                <div
+                  key={index}
+                  className="mt-3 cursor-pointer"
+                  onClick={() => window.open(item.url, "_blank")}
+                >
+                  <img
+                    src={item.Icon}
+                    alt={item.name}
+                    className="w-[22px] h-[22px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="w-[2px] h-[120px] bg-[#00cea8] mt-4" />
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 };
