@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
+import logo from "./nav/logo.png";
+import backend from "./services/backend.png";
+import creator from "./services/creator.png";
+import mobile from "./services/mobile.png";
+import web from "./services/web.png";
+import menu from "./nav/menu.svg";
+import close from "./nav/close.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -28,13 +27,12 @@ import springml from "./company/SpringML.png";
 import cognizant from "./company/cognizant.png";
 import agri from "./company/agri.png";
 
-
-import alumini from "./alumini.png";
-import payroll from "./payroll.png";
-import tripguide from "./tripguide.png";
+import github from "./projects/github.png";
+import alumini from "./projects/alumini.png";
+import payroll from "./projects/payroll.png";
 
 import gitIcon from "./social/git.png"
-import mailIcon from "./social/mail.png"
+import hackerIcon from "./social/hacker.png"
 import linkedinIcon from "./social/linkedin.png"
 
 
@@ -44,7 +42,6 @@ export {
   creator,
   mobile,
   web,
-  github,
   menu,
   close,
   css,
@@ -68,11 +65,11 @@ export {
   cognizant,
   agri,
 
+  github,
   alumini,
   payroll,
-  tripguide,
 
   gitIcon,
-  mailIcon,
+  hackerIcon,
   linkedinIcon,
 };

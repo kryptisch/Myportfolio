@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -32,7 +33,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Rohith",
           from_email: form.email,
-          to_email: "kryptischfunk@gmail.com",
+          to_email: "rohithdigajerla4@gmail.com",
           from_message: form.message,
         },
         "SRFU4xKj1C8HJe6ox"
@@ -40,7 +41,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you, I will get back to you.");
+          setShowPopup(true);
           setForm({
             name: "",
             email: "",
@@ -112,7 +113,24 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-      </motion.div>{" "}
+      </motion.div>
+
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 backdrop-blur-sm">
+          <div className="bg-white p-8 rounded shadow-md  shadow-sm shadow-secondary">
+            <p className="text-lg font-bold text-primary mb-3">Message Sent!</p>
+            <p className="text-tertiary font-semibold mb-5">
+              Thank you. I will get back to you as soon as possible.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-tertiary py-2 px-5 outline-none w-fit text-white font-semibold  shadow-sm shadow-primary"
+            >
+              Ok
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -4,12 +4,24 @@ import { Link } from "react-router-dom";
 import { styles } from "../style";
 import { navLinks } from "../constants";
 import { menu, logo, close } from "../assets";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [navbarBg, setNavbarBg] = useState(false);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView(
+        {
+          behavior: "smooth",
+          block: "start",
+        },
+        500
+      );
+    }
+  };
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = window.pageYOffset;
@@ -30,7 +42,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
+    <motion.nav
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
@@ -46,13 +58,13 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <img src={logo} alt="logo" className="w-10 h-10 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Rohith Digajerla&nbsp;
             {/*  <span className="sm:block hidden"> | Software Developer</span>*/}
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -61,11 +73,11 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <div onClick={() => scrollToSection(link.id)}>{link.title}</div>
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -96,7 +108,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
