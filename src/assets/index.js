@@ -33,6 +33,11 @@ import alumini from "./alumini.png";
 import payroll from "./payroll.png";
 import tripguide from "./tripguide.png";
 
+import gitIcon from "./social/git.png"
+import mailIcon from "./social/mail.png"
+import linkedinIcon from "./social/linkedin.png"
+
+
 export {
   logo,
   backend,
@@ -66,4 +71,8 @@ export {
   alumini,
   payroll,
   tripguide,
+
+  gitIcon,
+  mailIcon,
+  linkedinIcon,
 };
