@@ -22,11 +22,10 @@ import {
   agri,
   alumini,
   payroll,
-  tripguide,
   threejs,
 
   gitIcon,
-  mailIcon,
+  hackerIcon,
   linkedinIcon
   
 } from "../assets";
@@ -257,9 +256,9 @@ const social=[
     url:"https://github.com/kryptisch/"
   },
   {
-    name:"Gmail",
-    Icon:mailIcon,
-    url:"mailto:rohithdigajerla4@gmail.com"
+    name:"Hackerrank",
+    Icon:hackerIcon,
+    url:"https://www.hackerrank.com/kryptischfunk?hr_r=1"
 
   },
   {
