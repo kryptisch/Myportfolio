@@ -38,12 +38,19 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
+    // The <Canvas> component is being used to create a WebGL canvas for rendering 3D graphics.
+    // The "frameloop" attribute is set to "demand," indicating that the canvas will be rendered only when requested, optimizing performance.
     <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
+        {
+          // <OrbitControls> is a component that provides interactive camera controls for the 3D scene.
+        }
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
+      {
+        // The <Preload> component is used to preload resources asynchronously.
+      }
       <Preload all />
     </Canvas>
   );

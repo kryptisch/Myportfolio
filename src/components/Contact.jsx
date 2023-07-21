@@ -26,9 +26,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    //maill integration
     emailjs
       .send(
+        // service ID
         "service_zgfnvho",
+        // template ID
         "template_ep3w7qs",
         {
           from_name: form.name,
@@ -37,6 +40,7 @@ const Contact = () => {
           to_email: "rohithdigajerla4@gmail.com",
           from_message: form.message,
         },
+        // public key
         "SRFU4xKj1C8HJe6ox"
       )
       .then(
