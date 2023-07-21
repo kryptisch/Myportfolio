@@ -1,7 +1,6 @@
 import logo from "./nav/logo.png";
 import backend from "./services/backend.png";
-import creator from "./services/creator.png";
-import mobile from "./services/mobile.png";
+import creator from "./services/devops.png";
 import web from "./services/web.png";
 import menu from "./nav/menu.svg";
 import close from "./nav/close.svg";
@@ -38,12 +37,14 @@ import linkedinIcon from "./social/linkedin.png"
 
 export {
   logo,
+
   backend,
   creator,
-  mobile,
   web,
+
   menu,
   close,
+  
   css,
   docker,
   gcp,

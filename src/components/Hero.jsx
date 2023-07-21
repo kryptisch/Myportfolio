@@ -2,12 +2,10 @@ import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
 import { social } from "../constants";
 import { motion, transform } from "framer-motion";
-import { slideIn } from "../utils/motion";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [showDiv, setShowDiv] = useState(false);
-  const mail = "rohithdigajerla4@gmail.com";
 
   useEffect(() => {
     const handleScroll = () => {

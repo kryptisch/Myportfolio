@@ -8,6 +8,10 @@ const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
+    // The <hemisphereLight> component represents a hemisphere light source that illuminates the scene from all directions.
+    // The <spotLight> component represents a spot light source, which emits light in a specific direction from a single point.
+    // The <pointLight> component represents a point light source, emitting light equally in all directions from a single point.
+    // The <primitive> component allows rendering external 3D models or objects in the scene.
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
