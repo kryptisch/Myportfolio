@@ -237,4 +237,4 @@ const social=[
   }
 ]
 
-export { services, technologies, experiences, testimonials, projects,social };
+export { services, technologies, experiences, projects,social };
