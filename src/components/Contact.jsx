@@ -9,6 +9,7 @@ const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [popName, setPopName] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -42,6 +43,7 @@ const Contact = () => {
         () => {
           setLoading(false);
           setShowPopup(true);
+          setPopName(form.name);
           setForm({
             name: "",
             email: "",
@@ -120,7 +122,8 @@ const Contact = () => {
           <div className="bg-white p-8 rounded shadow-md  shadow-sm shadow-secondary">
             <p className="text-lg font-bold text-primary mb-3">Message Sent!</p>
             <p className="text-tertiary font-semibold mb-5">
-              Thank you. I will get back to you as soon as possible.
+              Thank you <span className="font-bold">{popName}</span> . I will
+              get back to you as soon as possible.
             </p>
             <button
               onClick={() => setShowPopup(false)}

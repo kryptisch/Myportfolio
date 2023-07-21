@@ -79,7 +79,8 @@ const Hero = () => {
           className="flex flex-col top-[80px] right-5 fixed z-999 justify-center items-center "
         >
           <div className="w-[2px] h-[120px] bg-[#555f9b] mb-4 " />
-          <motion.p
+          <motion.a
+            href="mailto:rohithdigajerla4@gmail.com"
             whileHover={{ scaleY: 1.02 }}
             className="cursor-pointer text-[#00cea8] "
             style={{
@@ -87,7 +88,7 @@ const Hero = () => {
             }}
           >
             rohithdigajerla4@gmail.com
-          </motion.p>
+          </motion.a>
         </motion.div>
       )}
     </section>
